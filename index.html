@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nimbus — Weather</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Search overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-modal">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search city..." autocomplete="off" />
+      <ul class="search-results" id="searchResults"></ul>
+      <button class="search-close" id="searchClose">✕</button>
+    </div>
+  </div>
+
+  <div class="card">
+
+    <!-- Top bar -->
+    <div class="topbar">
+      <div class="location">
+        <div class="location-text">
+          <div class="location-city" id="locationCity">—</div>
+          <div class="location-date" id="locationDate">Loading…</div>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <!-- F/C toggle -->
+        <button class="unit-toggle" id="unitToggle" title="Switch units">°C</button>
+        <button class="search-btn" id="searchBtn" title="Search location">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div class="main-weather">
+      <div class="temp-block">
+        <div class="temp" id="mainTemp"><span id="tempVal">—</span><sup id="tempUnit">°C</sup></div>
+        <div class="condition" id="condition">—</div>
+      </div>
+      <div class="weather-icon" id="weatherIcon">—</div>
+    </div>
+
+    <div class="hi-lo">
+      <span>H: <b id="hiTemp">—°</b></span>
+      <span>L: <b id="loTemp">—°</b></span>
+      <span>Feels like <b id="feelsLike">—°</b></span>
+    </div>
+
+    <hr />
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-icon">💧</div>
+        <span class="stat-value" id="humidity">—</span>
+        <span class="stat-label">Humidity</span>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">🌬️</div>
+        <span class="stat-value" id="wind">—</span>
+        <span class="stat-label">Wind</span>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">👁️</div>
+        <span class="stat-value" id="visibility">—</span>
+        <span class="stat-label">Visibility</span>
+      </div>
+    </div>
+
+    <!-- 5-day forecast -->
+    <div class="forecast-label">5-Day Forecast</div>
+    <div class="forecast" id="forecastStrip"></div>
+
+    <!-- Bottom -->
+    <div class="bottom">
+      <span class="brand">Nimbus</span>
+      <span class="updated" id="updatedTime">—</span>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
